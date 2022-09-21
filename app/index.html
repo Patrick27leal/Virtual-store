@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Shop Vasco</title>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="box_logo">
+            <div class="box_logo_detalhe">
+                <img src="./img/logo.png" class="logo_index" alt="">
+            </div>
+        </div>
+
+        <div class="box_search">
+            <input type="text" class="input_search" id="camp-search">
+            <button class="btn_search" id="btn-search"><img src="./img/pesquisa-de-lupa.png" alt=""></button>
+        </div>
+        <div class="box_options">
+            <button class="btn-filter"><img src="./img/filter.png" alt=""></button>
+        </div>
+    </header>
+    <div class="menu_options">
+
+        <div class="box_grupo_opcoes">
+            <h5 class="text-filter">Categoria</h5>
+            <div class="box-radio">
+                <input class="selector_item" type="checkbox" id="tipo" name="fav_language" value="HTML">
+                <p>Camisa</p>
+            </div>
+            <div class="box-radio">
+                <input class="selector_item" type="checkbox" id="tipo" name="fav_language" value="HTML">
+                <p>Bermuda</p>
+            </div>
+            <div class="box-radio">
+                <input class="selector_item" type="checkbox" id="tipo" name="fav_language" value="HTML">
+                <p>Short</p>
+            </div>
+            <h5 class="text-filter">Tamanho</h5>
+            <div class="box-radio">
+                <input class="selector_item" type="checkbox" id="tamanho" name="fav_language" value="P">
+                <p>P</p>
+            </div>
+            <div class="box-radio">
+                <input class="selector_item" type="checkbox" id="tamanho" name="fav_language" value="M">
+                <p>M</p>
+            </div>
+            <div class="box-radio">
+                <input class="selector_item" type="checkbox" id="tamanho" name="fav_language" value="G">
+                <p>G</p>
+            </div>
+        </div>
+
+        <h5 class="text-filter">Preço</h5>
+        <div class="box-input-valor">
+            <input data-testid="Maximum-price" name="Minimo" pattern="[0-9]*" rows="1" class="input-valor"
+                maxlength="120" placeholder="Mínimo" value="">
+            <span class="separador"> - </span>
+            <input data-testid="Maximum-price" name="Maximum" pattern="[0-9]*" rows="1" class="input-valor"
+                maxlength="120" placeholder="Máximo" value="">
+        </div>
+        <button class="btn-filtrar">Filtrar</button>
+    </div>
+    <div class="slides">
+        <div class="slide slide1">
+            <img class="img-slider " src="./img/banner1.png" alt="">
+        </div>
+        <div class="slide slide2">
+            <img class="img-slider " src="./img/banner2.png" alt="">
+        </div>
+        <div class="slide slide3">
+            <img class="img-slider " src="./img/banner3.png" alt="">
+        </div>
+    </div>
+    <div class="container">
+        <div class="box_description_container">
+<h1>Produtos da Loja:</h1>
+        </div>
+        <div class="box-products">
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisavascogoleirob.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisavascolgbtb.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisavascotormenta.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisavascotreinob.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisa.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisa.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisa.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="products">
+                <div class="product">
+                    <img class="img-product" src="./img/camisa.png" alt="">
+                </div>
+                <div class="footer-product">
+                    <p>Nome do produto</p>
+                    <h1>R$00.00</h1>
+                    <div class="box-category-product">
+                        <p>Blusa</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+<div class="box-logo-footer">
+<img class="img_logo_footer" src="./img/logo_footer.png" alt="">
+</div>
+        <div class="identificacao">
+            <p>copyright© 2022 | Patrick Leal</p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script src="./script.js"></script>
+
+</body>
+
+</html>
