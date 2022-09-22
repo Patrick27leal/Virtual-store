@@ -1,2 +1,2 @@
-# Virtual-store
-lojinha virtual
+# Vasco-store
+loja virtual do vasco
