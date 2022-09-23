@@ -4,12 +4,15 @@ const Estoque = [
  {id:3 , "Nome":"camisavascolgbtb.png", "Modelo": "LGBT BRANCA", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 370.00},
  {id:4 , "Nome":"camisavascogoleirob.png", "Modelo": "GOLEIRO BRANCA", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 170.00 },
  {id:5 , "Nome":"camisavascotreinob.png", "Modelo": "TREINO BRANCA", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 170.00},
+ {id:6 , "Nome":"camisa-vasco-1.png", "Modelo": "Primeira Camisa", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 270.00},
+ {id:7 , "Nome":"camisa-vasco-2.png", "Modelo": "Segunda Camisa", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 270.00},
+ {id:8 , "Nome":"terceira-camisa.png", "Modelo": "Terceira Camisa", "Marca": "", "Tamanho":"", "Categoria":"CAMISA", "Preco": 170.00},
 ]
 
 const builderProducts = document.querySelector(".box-products");
 
 document.querySelector("#btn-search")?.addEventListener("click", (event) =>{
-
+const Search = (document.querySelector("#camp-search") as HTMLInputElement).value
 
 })
 
