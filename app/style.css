@@ -187,10 +187,11 @@ h1{
     background-color: rgb(120, 120, 120);
     margin: 2%;
     border-radius: 10px;
+    cursor: pointer;
 }
 .product{
     width: 100%;
-    height: auto
+    height: 200px;
 }
 .footer-product{
 width: 100%;
@@ -240,6 +241,12 @@ footer{
 .img-product{
     width: 100%;
     height: auto;
+    object-fit: cover;
+    transition: transform 0.25s ease-in-out;
+}
+.img-product:hover{
+    transform: scale(1.2);
+    margin-bottom: 20%;
 }
 .box-radio{
     width: 100%;
