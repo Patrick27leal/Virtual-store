@@ -6,7 +6,8 @@ const Estoque = [
  {id:5 , "Nome":"camisavascotreinob.png", "Modelo": "TREINO BRANCA", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 170.00},
  {id:6 , "Nome":"camisa-vasco-1.png", "Modelo": "Primeira Camisa", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 270.00},
  {id:7 , "Nome":"camisa-vasco-2.png", "Modelo": "Segunda Camisa", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 270.00},
- {id:8 , "Nome":"terceira-camisa.png", "Modelo": "Terceira Camisa", "Marca": "", "Tamanho":"", "Categoria":"CAMISA", "Preco": 170.00},
+ {id:8 , "Nome":"terceira-camisa.png", "Modelo": "Terceira Camisa", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 170.00},
+ {id:8 , "Nome":"camisa-treino-verde-agua.png", "Modelo": "Treino Secundaria", "Marca": "KAPPA", "Tamanho":"G", "Categoria":"CAMISA", "Preco": 120.00},
 ]
 
 const builderProducts = document.querySelector(".box-products");
