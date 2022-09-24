@@ -1,5 +1,5 @@
 "use strict";
-var _a;
+var _a, _b;
 const Estoque = [
     { id: 1, "Nome": "camisavascotormenta.png", "Modelo": "TORMENTA", "Marca": "KAPPA", "Tamanho": "G", "Categoria": "CAMISA", "Preco": 180.00 },
     { id: 2, "Nome": "camisa.png", "Modelo": "LGBT NEGRA", "Marca": "KAPPA", "Tamanho": "G", "Categoria": "CAMISA", "Preco": 370.00 },
@@ -10,7 +10,7 @@ const Estoque = [
     { id: 7, "Nome": "camisa-vasco-2.png", "Modelo": "Segunda Camisa", "Marca": "KAPPA", "Tamanho": "G", "Categoria": "CAMISA", "Preco": 270.00 },
     { id: 8, "Nome": "terceira-camisa.png", "Modelo": "Terceira Camisa", "Marca": "KAPPA", "Tamanho": "G", "Categoria": "CAMISA", "Preco": 170.00 },
     { id: 9, "Nome": "camisa-treino-verde-agua.png", "Modelo": "Treino Secundaria", "Marca": "KAPPA", "Tamanho": "G", "Categoria": "CAMISA", "Preco": 120.00 },
-    { id: 9, "Nome": "calcao-terceiro-uniforme.png", "Modelo": "Calção 3°", "Marca": "KAPPA", "Tamanho": "M", "Categoria": "CALÇÃO", "Preco": 40.00 }
+    { id: 10, "Nome": "calcao-terceiro-uniforme.png", "Modelo": "Calção 3°", "Marca": "KAPPA", "Tamanho": "M", "Categoria": "CALÇÃO", "Preco": 40.00 }
 ];
 const builderProducts = document.querySelector(".box-products");
 if (builderProducts) {
@@ -31,7 +31,20 @@ if (builderProducts) {
         `;
     });
 }
-(_a = document.querySelector("#btn-search")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", (event) => {
+(_a = document.querySelector(".btn-filter")) === null || _a === void 0 ? void 0 : _a.addEventListener("click", () => {
+    const box = document.getElementById('main-options');
+    if ((box) || (box == '')) {
+        if ((box.style.display == 'none') || (box.style.display == '')) {
+            console.log(box.style.display);
+            box.style.display = 'grid';
+        }
+        else {
+            console.log(box.style.display);
+            box.style.display = 'none';
+        }
+    }
+});
+(_b = document.querySelector("#btn-search")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", (event) => {
     if (builderProducts) {
         builderProducts.innerHTML = '';
     }

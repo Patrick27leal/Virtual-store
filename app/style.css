@@ -93,7 +93,8 @@ h1{
     margin-right: 5%;
     border: 0;
     cursor: pointer;
-    padding: 1.5%;
+    padding: 0.5%;
+    margin-top: 1%;
 }
 .btn-filter:active {
     border: 1px solid rgb(255, 255, 255);
@@ -126,12 +127,14 @@ h1{
     width: 10%;
     padding: 0 2% 2% 2%;
     text-align-last: center;
-    display: grid;
     display: none;
     border-radius: 0 0 5px 5px;
     transition: 1s;
     color: #fff;
     justify-items: center;
+}
+#main-options{
+    display: none;
 }
 .box_grupo_opcoes{
     width: 70%;
@@ -164,12 +167,14 @@ h1{
     margin-right: 10%;
 }
 .btn-filtrar{
-    padding: 2% 4% 2% 4%;
-    background-color: #fff;
+    padding: 3% 10% 3% 10%;
+    background-color: #000;
     border-radius: 50px;
     margin-top: 20%;
-    border: 0;
+    border: 1px solid #fff;
     cursor: pointer;
+    color: #fff;
+    font-size: 12pt;
 }
 .box-products{
     height: auto;
