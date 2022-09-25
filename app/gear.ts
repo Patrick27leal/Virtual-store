@@ -33,6 +33,15 @@ const builderProducts = document.querySelector(".box-products");
     })
 } 
 
+
+document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
+    const Tamanho = (document.querySelector('input[name="Tamanho"]:checked')as HTMLInputElement).value;
+    console.log('aaaa1');
+});
+
+
+
+
 document.querySelector(".btn-filter")?.addEventListener("click", () => {
         const box = document.getElementById('main-options');
     
@@ -46,8 +55,6 @@ document.querySelector(".btn-filter")?.addEventListener("click", () => {
             }
         }
     })
-
-
 
 document.querySelector("#btn-search")?.addEventListener("click", (event) => {
 
