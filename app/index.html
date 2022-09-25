@@ -30,16 +30,16 @@
         <div class="box_grupo_opcoes">
             <h5 class="text-filter">Categoria</h5>
             <div class="box-radio">
-                <input class="selector_item" type="checkbox" id="tipo" name="fav_language" value="HTML">
+                <input class="selector_item" type="radio" id="tipo" name="Categoria" value="CAMISA">
                 <p>Camisa</p>
             </div>
             <div class="box-radio">
-                <input class="selector_item" type="checkbox" id="tipo" name="fav_language" value="HTML">
-                <p>Bermuda</p>
+                <input class="selector_item" type="radio" id="tipo" name="Categoria" value="SHORT">
+                <p>Short</p>
             </div>
             <div class="box-radio">
-                <input class="selector_item" type="checkbox" id="tipo" name="fav_language" value="HTML">
-                <p>Short</p>
+                <input class="selector_item" type="radio" id="tipo" name="Categoria" value="MEIA">
+                <p>Meia</p>
             </div>
             <h5 class="text-filter">Tamanho</h5>
             <div class="box-radio">
@@ -59,10 +59,10 @@
         <h5 class="text-filter">Preço</h5>
         <div class="box-input-valor">
             <input data-testid="Maximum-price" name="Minimo" pattern="[0-9]*" rows="1" class="input-valor"
-                maxlength="120" placeholder="Mínimo" value="">
+                maxlength="120" placeholder="Mínimo" value="" id="ValorMaximo">
             <span class="separador"> - </span>
             <input data-testid="Maximum-price" name="Maximum" pattern="[0-9]*" rows="1" class="input-valor"
-                maxlength="120" placeholder="Máximo" value="">
+                maxlength="120" placeholder="Máximo" value="" id="ValorMinimo">
         </div>
         <button id="BtnIncFilter" class="btn-filtrar">Filtrar</button>
     </div>
