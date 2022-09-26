@@ -63,66 +63,13 @@ document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
                 const CategoriaSelecionado = (Categoria as HTMLInputElement).value;
 
                 if ((row.Tamanho.includes(TamanhoSelecionado)) && (row.Categoria.includes(CategoriaSelecionado))) {
-                    
-                    if(ValorMaximo && ValorMinimo){
-
-                        let Maximo = parseFloat((ValorMaximo as HTMLInputElement).value);
-
-                        let Minimo = parseFloat((ValorMinimo as HTMLInputElement).value);
-
-                        if(Minimo >= row.Preco <= Maximo){
-                            return row.Nome;
-                        }
-
-                    }else{
-
-                        let Maximo = (ValorMaximo as HTMLInputElement).value;
-
-                        let Minimo = (ValorMinimo as HTMLInputElement).value;
-
-                        if(Maximo){
-                            row.Preco < parseFloat(Maximo);
-                            return row.Nome;
-                        }else{
-                            row.Preco < parseFloat(Minimo);
-                            return row.Nome;
-                        }
-                        
-                    }
-
+                   
                     return row.Nome;
-
                 }
             } else {
                 if (Tamanho) {
                     const TamanhoSelecionado = (Tamanho as HTMLInputElement).value;
                     if (row.Tamanho.includes(TamanhoSelecionado)) {
-
-                        if(ValorMaximo && ValorMinimo){
-
-                            let Maximo = parseFloat((ValorMaximo as HTMLInputElement).value);
-    
-                            let Minimo = parseFloat((ValorMinimo as HTMLInputElement).value);
-    
-                            if(Minimo >= row.Preco <= Maximo){
-                                return row.Nome;
-                            }
-    
-                        }else{
-    
-                            let Maximo = (ValorMaximo as HTMLInputElement).value;
-    
-                            let Minimo = (ValorMinimo as HTMLInputElement).value;
-    
-                            if(Maximo){
-                                row.Preco < parseFloat(Maximo);
-                                return row.Nome;
-                            }else{
-                                row.Preco < parseFloat(Minimo);
-                                return row.Nome;
-                            }
-                            
-                        }
 
                         return row.Nome;
                     }
@@ -130,35 +77,6 @@ document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
                 if (Categoria) {
                     const CategoriaSelecionado = (Categoria as HTMLInputElement).value;
                     if (row.Categoria.includes(CategoriaSelecionado)) {
-
-                        if(ValorMaximo && ValorMinimo){
-
-                            let Maximo = parseFloat((ValorMaximo as HTMLInputElement).value);
-    
-                            let Minimo = parseFloat((ValorMinimo as HTMLInputElement).value);
-    
-
-
-                            
-                            if(Minimo >= row.Preco <= Maximo){
-                                return row.Nome;
-                            }
-    
-                        }else{
-    
-                            let Maximo = (ValorMaximo as HTMLInputElement).value;
-    
-                            let Minimo = (ValorMinimo as HTMLInputElement).value;
-    
-                            if(Maximo){
-                                row.Preco < parseFloat(Maximo);
-                                return row.Nome;
-                            }else{
-                                row.Preco < parseFloat(Minimo);
-                                return row.Nome;
-                            }
-                            
-                        }
 
                         return row.Nome;
                     }
