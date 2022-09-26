@@ -40,21 +40,12 @@ if (builderProducts) {
     const ValorMaximo = document.querySelector('#ValorMaximo');
     const ValorMinimo = document.querySelector('#ValorMinimo');
     const ResultadoPesquisaFiltro = [];
-    const VerificaEstoqueFiltro = Estoque.map((row, index) => {
+    Estoque.map((row) => {
         const BasedeBuscaFiltro = [];
         BasedeBuscaFiltro.push(row);
         const filtrados = BasedeBuscaFiltro.find((rowUnique) => {
             const Maximo = ValorMaximo.value;
             const Minimo = ValorMinimo.value;
-            if (Maximo != '' && Minimo != '') {
-                const MaximoVal = parseFloat(Maximo);
-                const MinimoVal = parseFloat(Minimo);
-                if (row.Preco <= MaximoVal) {
-                    if (MinimoVal <= row.Preco) {
-                        return row.Nome;
-                    }
-                }
-            }
             if (Tamanho && Categoria) {
                 const TamanhoSelecionado = Tamanho.value;
                 const CategoriaSelecionado = Categoria.value;
@@ -73,7 +64,7 @@ if (builderProducts) {
                     }
                 }
             }
-            else {
+            else if (Tamanho || Categoria) {
                 if (Tamanho) {
                     const TamanhoSelecionado = Tamanho.value;
                     if (row.Tamanho.includes(TamanhoSelecionado)) {
@@ -109,12 +100,20 @@ if (builderProducts) {
                     }
                 }
             }
+            else if (Maximo != '' && Minimo != '') {
+                const MaximoVal = parseFloat(Maximo);
+                const MinimoVal = parseFloat(Minimo);
+                if (row.Preco <= MaximoVal) {
+                    if (MinimoVal <= row.Preco) {
+                        return row.Nome;
+                    }
+                }
+            }
         });
         if (typeof filtrados !== "undefined") {
             ResultadoPesquisaFiltro.push(filtrados);
         }
     });
-    console.log(ResultadoPesquisaFiltro);
     if (typeof ResultadoPesquisaFiltro !== "undefined") {
         if (builderProducts) {
             ResultadoPesquisaFiltro.forEach((ResultadoPesquisaFiltro) => {
@@ -140,11 +139,9 @@ if (builderProducts) {
     const box = document.getElementById('main-options');
     if ((box) || (box == '')) {
         if ((box.style.display == 'none') || (box.style.display == '')) {
-            console.log(box.style.display);
             box.style.display = 'grid';
         }
         else {
-            console.log(box.style.display);
             box.style.display = 'none';
         }
     }
@@ -155,7 +152,7 @@ if (builderProducts) {
     }
     const Search = document.querySelector("#camp-search").value;
     const ResultadoPesquisa = [];
-    const VerificaDados = Estoque.map((row, index) => {
+    Estoque.map((row, index) => {
         const BasedeBusca = [];
         BasedeBusca.push(row);
         const filtrados = BasedeBusca.find((rowUnique) => {

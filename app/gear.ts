@@ -51,24 +51,16 @@ document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
 
     const ResultadoPesquisaFiltro: any = []
 
-    const VerificaEstoqueFiltro = Estoque.map((row, index) => {
+        Estoque.map((row) => {
+
         const BasedeBuscaFiltro = [];
+
         BasedeBuscaFiltro.push(row);
+
         const filtrados = BasedeBuscaFiltro.find((rowUnique: { id: number, Nome: String, Modelo: String, Marca: String, Tamanho: String, Categoria: String, Preco: Number }) => {
+            const Maximo = (ValorMaximo as HTMLInputElement).value;
 
-        const Maximo = (ValorMaximo as HTMLInputElement).value;
-        const Minimo = (ValorMinimo as HTMLInputElement).value;    
-
-        if (Maximo != '' && Minimo != '') {
-            const MaximoVal = parseFloat(Maximo);
-            const MinimoVal = parseFloat(Minimo);
-            if (row.Preco <= MaximoVal) {
-                if (MinimoVal <= row.Preco) {
-                    return row.Nome;
-                }
-                
-            }
-        }
+            const Minimo = (ValorMinimo as HTMLInputElement).value;
 
             if (Tamanho && Categoria) {
 
@@ -77,75 +69,116 @@ document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
                 const CategoriaSelecionado = (Categoria as HTMLInputElement).value;
 
                 if ((row.Tamanho.includes(TamanhoSelecionado)) && (row.Categoria.includes(CategoriaSelecionado))) {
-                   
+
                     if (Maximo != '' && Minimo != '') {
+
                         const MaximoVal = parseFloat(Maximo);
+
                         const MinimoVal = parseFloat(Minimo);
+
                         if (row.Preco <= MaximoVal) {
+
                             if (MinimoVal <= row.Preco) {
+
                                 return row.Nome;
                             }
-                            
                         }
-                    }else{
+                    } else {
+
                         return row.Nome;
+
+
                     }
-                    
                 }
-            } else {
+
+            } 
+            else if(Tamanho || Categoria) {
+
                 if (Tamanho) {
+
                     const TamanhoSelecionado = (Tamanho as HTMLInputElement).value;
+
                     if (row.Tamanho.includes(TamanhoSelecionado)) {
 
                         if (Maximo != '' && Minimo != '') {
+
                             const MaximoVal = parseFloat(Maximo);
+
                             const MinimoVal = parseFloat(Minimo);
+
                             if (row.Preco <= MaximoVal) {
+
                                 if (MinimoVal <= row.Preco) {
+
                                     return row.Nome;
                                 }
-                                
                             }
-                        }else{
+
+                        } else {
+
                             return row.Nome;
+
                         }
-                        
+
                     }
                 }
                 if (Categoria) {
+
                     const CategoriaSelecionado = (Categoria as HTMLInputElement).value;
+
                     if (row.Categoria.includes(CategoriaSelecionado)) {
 
                         if (Maximo != '' && Minimo != '') {
+
                             const MaximoVal = parseFloat(Maximo);
+
                             const MinimoVal = parseFloat(Minimo);
+
                             if (row.Preco <= MaximoVal) {
+
                                 if (MinimoVal <= row.Preco) {
+
                                     return row.Nome;
                                 }
-                                
                             }
-                        }else{
+                        } else {
+
                             return row.Nome;
+
                         }
                     }
                 }
+            }
+            else if (Maximo != '' && Minimo != '') {
 
+                const MaximoVal = parseFloat(Maximo);
+
+                const MinimoVal = parseFloat(Minimo);
+
+                if (row.Preco <= MaximoVal) {
+
+                    if (MinimoVal <= row.Preco) {
+
+                        return row.Nome;
+                    }
+                }
             }
 
-
         });
-        if (typeof filtrados !== "undefined") {
-            ResultadoPesquisaFiltro.push(filtrados);
-        }
 
+        if (typeof filtrados !== "undefined") {
+
+            ResultadoPesquisaFiltro.push(filtrados);
+
+        }
     })
-    console.log(ResultadoPesquisaFiltro);
 
     if (typeof ResultadoPesquisaFiltro !== "undefined") {
 
         if (builderProducts) {
+
             ResultadoPesquisaFiltro.forEach((ResultadoPesquisaFiltro: { id: number, Nome: String, Modelo: String, Marca: String, Tamanho: String, Categoria: String, Preco: Number }) => {
+
                 builderProducts.innerHTML += `
         <div class="products">
         <div class="product">
@@ -163,22 +196,23 @@ document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
             })
         }
     }
-
-
 });
 
 
 
 
 document.querySelector(".btn-filter")?.addEventListener("click", () => {
+
     const box = document.getElementById('main-options');
 
     if ((box) || (box == '')) {
+
         if ((box.style.display == 'none') || (box.style.display == '')) {
-            console.log(box.style.display);
+
             box.style.display = 'grid';
+
         } else {
-            console.log(box.style.display);
+
             box.style.display = 'none';
         }
     }
@@ -187,15 +221,21 @@ document.querySelector(".btn-filter")?.addEventListener("click", () => {
 document.querySelector("#btn-search")?.addEventListener("click", (event) => {
 
     if (builderProducts) {
+
         builderProducts.innerHTML = '';
+
     }
 
     const Search = (document.querySelector("#camp-search") as HTMLInputElement).value
+
     const ResultadoPesquisa: any = [];
 
-    const VerificaDados = Estoque.map((row, index) => {
+    Estoque.map((row, index) => {
+
         const BasedeBusca = [];
+
         BasedeBusca.push(row);
+
         const filtrados = BasedeBusca.find((rowUnique: { id: number, Nome: String, Modelo: String, Marca: String, Tamanho: String, Categoria: String, Preco: Number }) => {
 
             if (row.Nome.includes(Search) || ResultadoPesquisa.includes(row)) {
@@ -215,15 +255,18 @@ document.querySelector("#btn-search")?.addEventListener("click", (event) => {
             }
         });
         if (typeof filtrados !== "undefined") {
-            ResultadoPesquisa.push(filtrados);
-        }
 
+            ResultadoPesquisa.push(filtrados);
+
+        }
     })
 
     if (typeof ResultadoPesquisa !== "undefined") {
 
         if (builderProducts) {
+
             ResultadoPesquisa.forEach((ResultadoPesquisa: { id: number, Nome: String, Modelo: String, Marca: String, Tamanho: String, Categoria: String, Preco: Number }) => {
+                
                 builderProducts.innerHTML += `
         <div class="products">
         <div class="product">
@@ -245,6 +288,8 @@ document.querySelector("#btn-search")?.addEventListener("click", (event) => {
 
 
 function querySelector(arg0: string) {
+
     throw new Error("Function not implemented.");
+
 }
 
