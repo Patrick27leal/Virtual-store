@@ -56,6 +56,20 @@ document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
         BasedeBuscaFiltro.push(row);
         const filtrados = BasedeBuscaFiltro.find((rowUnique: { id: number, Nome: String, Modelo: String, Marca: String, Tamanho: String, Categoria: String, Preco: Number }) => {
 
+        const Maximo = (ValorMaximo as HTMLInputElement).value;
+        const Minimo = (ValorMinimo as HTMLInputElement).value;    
+
+        if (Maximo != '' && Minimo != '') {
+            const MaximoVal = parseFloat(Maximo);
+            const MinimoVal = parseFloat(Minimo);
+            if (row.Preco <= MaximoVal) {
+                if (MinimoVal <= row.Preco) {
+                    return row.Nome;
+                }
+                
+            }
+        }
+
             if (Tamanho && Categoria) {
 
                 const TamanhoSelecionado = (Tamanho as HTMLInputElement).value;
@@ -64,21 +78,56 @@ document.querySelector("#BtnIncFilter")?.addEventListener("click", () => {
 
                 if ((row.Tamanho.includes(TamanhoSelecionado)) && (row.Categoria.includes(CategoriaSelecionado))) {
                    
-                    return row.Nome;
+                    if (Maximo != '' && Minimo != '') {
+                        const MaximoVal = parseFloat(Maximo);
+                        const MinimoVal = parseFloat(Minimo);
+                        if (row.Preco <= MaximoVal) {
+                            if (MinimoVal <= row.Preco) {
+                                return row.Nome;
+                            }
+                            
+                        }
+                    }else{
+                        return row.Nome;
+                    }
+                    
                 }
             } else {
                 if (Tamanho) {
                     const TamanhoSelecionado = (Tamanho as HTMLInputElement).value;
                     if (row.Tamanho.includes(TamanhoSelecionado)) {
 
-                        return row.Nome;
+                        if (Maximo != '' && Minimo != '') {
+                            const MaximoVal = parseFloat(Maximo);
+                            const MinimoVal = parseFloat(Minimo);
+                            if (row.Preco <= MaximoVal) {
+                                if (MinimoVal <= row.Preco) {
+                                    return row.Nome;
+                                }
+                                
+                            }
+                        }else{
+                            return row.Nome;
+                        }
+                        
                     }
                 }
                 if (Categoria) {
                     const CategoriaSelecionado = (Categoria as HTMLInputElement).value;
                     if (row.Categoria.includes(CategoriaSelecionado)) {
 
-                        return row.Nome;
+                        if (Maximo != '' && Minimo != '') {
+                            const MaximoVal = parseFloat(Maximo);
+                            const MinimoVal = parseFloat(Minimo);
+                            if (row.Preco <= MaximoVal) {
+                                if (MinimoVal <= row.Preco) {
+                                    return row.Nome;
+                                }
+                                
+                            }
+                        }else{
+                            return row.Nome;
+                        }
                     }
                 }
 

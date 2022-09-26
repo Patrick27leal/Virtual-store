@@ -44,81 +44,68 @@ if (builderProducts) {
         const BasedeBuscaFiltro = [];
         BasedeBuscaFiltro.push(row);
         const filtrados = BasedeBuscaFiltro.find((rowUnique) => {
+            const Maximo = ValorMaximo.value;
+            const Minimo = ValorMinimo.value;
+            if (Maximo != '' && Minimo != '') {
+                const MaximoVal = parseFloat(Maximo);
+                const MinimoVal = parseFloat(Minimo);
+                if (row.Preco <= MaximoVal) {
+                    if (MinimoVal <= row.Preco) {
+                        return row.Nome;
+                    }
+                }
+            }
             if (Tamanho && Categoria) {
                 const TamanhoSelecionado = Tamanho.value;
                 const CategoriaSelecionado = Categoria.value;
                 if ((row.Tamanho.includes(TamanhoSelecionado)) && (row.Categoria.includes(CategoriaSelecionado))) {
-                    if (ValorMaximo && ValorMinimo) {
-                        let Maximo = parseFloat(ValorMaximo.value);
-                        let Minimo = parseFloat(ValorMinimo.value);
-                        if (Minimo >= row.Preco <= Maximo) {
-                            return row.Nome;
+                    if (Maximo != '' && Minimo != '') {
+                        const MaximoVal = parseFloat(Maximo);
+                        const MinimoVal = parseFloat(Minimo);
+                        if (row.Preco <= MaximoVal) {
+                            if (MinimoVal <= row.Preco) {
+                                return row.Nome;
+                            }
                         }
                     }
                     else {
-                        let Maximo = ValorMaximo.value;
-                        let Minimo = ValorMinimo.value;
-                        if (Maximo) {
-                            row.Preco < parseFloat(Maximo);
-                            return row.Nome;
-                        }
-                        else {
-                            row.Preco < parseFloat(Minimo);
-                            return row.Nome;
-                        }
+                        return row.Nome;
                     }
-                    return row.Nome;
                 }
             }
             else {
                 if (Tamanho) {
                     const TamanhoSelecionado = Tamanho.value;
                     if (row.Tamanho.includes(TamanhoSelecionado)) {
-                        if (ValorMaximo && ValorMinimo) {
-                            let Maximo = parseFloat(ValorMaximo.value);
-                            let Minimo = parseFloat(ValorMinimo.value);
-                            if (Minimo >= row.Preco <= Maximo) {
-                                return row.Nome;
+                        if (Maximo != '' && Minimo != '') {
+                            const MaximoVal = parseFloat(Maximo);
+                            const MinimoVal = parseFloat(Minimo);
+                            if (row.Preco <= MaximoVal) {
+                                if (MinimoVal <= row.Preco) {
+                                    return row.Nome;
+                                }
                             }
                         }
                         else {
-                            let Maximo = ValorMaximo.value;
-                            let Minimo = ValorMinimo.value;
-                            if (Maximo) {
-                                row.Preco < parseFloat(Maximo);
-                                return row.Nome;
-                            }
-                            else {
-                                row.Preco < parseFloat(Minimo);
-                                return row.Nome;
-                            }
+                            return row.Nome;
                         }
-                        return row.Nome;
                     }
                 }
                 if (Categoria) {
                     const CategoriaSelecionado = Categoria.value;
                     if (row.Categoria.includes(CategoriaSelecionado)) {
-                        if (ValorMaximo && ValorMinimo) {
-                            let Maximo = parseFloat(ValorMaximo.value);
-                            let Minimo = parseFloat(ValorMinimo.value);
-                            if (Minimo >= row.Preco <= Maximo) {
-                                return row.Nome;
+                        if (Maximo != '' && Minimo != '') {
+                            const MaximoVal = parseFloat(Maximo);
+                            const MinimoVal = parseFloat(Minimo);
+                            if (row.Preco <= MaximoVal) {
+                                if (MinimoVal <= row.Preco) {
+                                    return row.Nome;
+                                }
                             }
                         }
                         else {
-                            let Maximo = ValorMaximo.value;
-                            let Minimo = ValorMinimo.value;
-                            if (Maximo) {
-                                row.Preco < parseFloat(Maximo);
-                                return row.Nome;
-                            }
-                            else {
-                                row.Preco < parseFloat(Minimo);
-                                return row.Nome;
-                            }
+                            return row.Nome;
                         }
-                        return row.Nome;
                     }
                 }
             }
